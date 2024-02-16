@@ -2,7 +2,7 @@ import React from "react";
 import { api } from "@/libs/api";
 import { PaintingCard } from "@/components/PaintingCard";
 
-export default async function Gallery() {
+const Gallery = async () => {
   const { data } = await api.get("paintings");
 
   return (
@@ -10,7 +10,7 @@ export default async function Gallery() {
       <div className="my-9 text-3xl">
         <h2 className="text-center">Gallery</h2>
       </div>
-      <div className="mx-auto flex max-w-5xl flex-wrap gap-8">
+      <div className="mx-auto grid grid-cols-4 gap-4">
         {data.map((painting) => (
           <PaintingCard
             key={painting.id}
@@ -21,4 +21,6 @@ export default async function Gallery() {
       </div>
     </div>
   );
-}
+};
+
+export default Gallery;

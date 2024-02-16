@@ -10,10 +10,10 @@ export const PaintingCard = ({
   image: SizesImage;
 }) => {
   return (
-    <div className="bg-white shadow-md">
-      <div className="w-80">
+    <div className="bg-white shadow-md w-full">
+      <div className="h-96 w-full">
         <Image
-          className="h-96 w-full object-cover"
+          className="object-cover h-full w-full"
           src={image.url}
           width={image.width}
           height={image.height}
