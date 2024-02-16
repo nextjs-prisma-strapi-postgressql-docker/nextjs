@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 export const Header = () => {
   // Get user session
@@ -64,7 +64,8 @@ export const Header = () => {
                       <button
                         className={`${
                           active ? "bg-violet-500 text-white" : "text-gray-900"
-                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                        onClick={() => signOut()}>
                         {active ? "" : ""}
                         Logout
                       </button>
