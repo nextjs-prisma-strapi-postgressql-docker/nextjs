@@ -3,7 +3,7 @@ import { api } from "@/libs/api";
 import { PaintingCard } from "@/components/PaintingCard";
 
 const Gallery = async () => {
-  const { data } = await api.get("paintings");
+  const { data } = await api.getPaintings();
 
   return (
     <div className="mb-9">
@@ -14,6 +14,7 @@ const Gallery = async () => {
         {data.map((painting) => (
           <PaintingCard
             key={painting.id}
+            id={painting.id}
             title={painting.attributes.Title}
             image={painting.attributes.Images.data[0].attributes.formats.small}
           />

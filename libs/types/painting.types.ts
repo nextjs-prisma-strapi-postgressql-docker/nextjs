@@ -1,4 +1,5 @@
-export type PaintingDTO = { data: Painting[] };
+export type PaintingsDTO = { data: Painting[] };
+export type PaintingDTO = { data: Painting };
 
 interface Painting {
   id: number;
